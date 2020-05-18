@@ -153,6 +153,18 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
         <dimension x="40" y="40"/>
       </graphics>
       <toolspecific tool="WoPeD" version="1.0">
+        <trigger id="" type="200">
+          <graphics>
+            <position x="340" y="190"/>
+            <dimension x="24" y="22"/>
+          </graphics>
+        </trigger>
+        <transitionResource organizationalUnitName="Office workers" roleName="IT technician">
+          <graphics>
+            <position x="340" y="163"/>
+            <dimension x="60" y="22"/>
+          </graphics>
+        </transitionResource>
         <time>0</time>
         <timeUnit>1</timeUnit>
         <orientation>1</orientation>
@@ -311,6 +323,7 @@ Created with Workflow PetriNet Designer Version 3.2.0 (woped.org)-->
       <verticalLayout>false</verticalLayout>
       <resources>
         <role Name="Clerk"/>
+        <role Name="IT technician"/>
         <organizationUnit Name="Office workers"/>
       </resources>
       <simulations/>
