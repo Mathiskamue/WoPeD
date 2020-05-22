@@ -595,6 +595,8 @@
       <workItem from="1589182011858" duration="6772000" />
       <workItem from="1589363527268" duration="766000" />
       <workItem from="1589785661861" duration="4637000" />
+      <workItem from="1590135769327" duration="490000" />
+      <workItem from="1590136535646" duration="1245000" />
     </task>
     <task id="LOCAL-00001" summary="Adapted master build to IntelliJ">
       <created>1532514709268</created>
@@ -973,14 +975,14 @@
       <screen x="0" y="23" width="2560" height="1361" />
     </state>
     <state x="761" y="516" width="1214" height="580" key="VcsDiffUtil.ChangesDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1588767260892" />
-    <state x="0" y="0" width="612" height="680" key="find.popup" timestamp="1589358021856">
+    <state x="0" y="0" width="717" height="680" key="find.popup" timestamp="1590139416875">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" width="612" height="680" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1589358021856" />
-    <state x="375" y="148" width="672" height="444" key="search.everywhere.popup" timestamp="1589798167818">
+    <state x="0" y="0" width="717" height="680" key="find.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1590139416875" />
+    <state x="375" y="148" width="672" height="444" key="search.everywhere.popup" timestamp="1590136143857">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="375" y="148" width="672" height="444" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1589798167818" />
+    <state x="375" y="148" width="672" height="444" key="search.everywhere.popup/0.0.1280.680/1920.0.1920.1040@0.0.1280.680" timestamp="1590136143857" />
     <state x="474" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1620.1040@0.0.1620.1040" timestamp="1588877565250" />
   </component>
   <component name="XDebuggerManager">
@@ -1005,11 +1007,6 @@
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textGenerator/TextGenerator.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/WoPeD-Installer/dist/mac/WoPeD.app/Contents/Java/WoPeD-classes-3.7.1.jar!/org/woped/quantana/gui/CapacityAnalysisDialog.class</url>
           <line>891</line>
           <option name="timeStamp" value="90" />
@@ -1023,6 +1020,11 @@
           <url>file://$PROJECT_DIR$/WoPeD-Text2Process/src/ToolWrapper/StanfordParserFunctionality.java</url>
           <line>40</line>
           <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textGenerator/TextGenerator.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
