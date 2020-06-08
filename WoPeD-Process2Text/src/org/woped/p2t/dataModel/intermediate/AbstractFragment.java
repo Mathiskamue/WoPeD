@@ -48,23 +48,26 @@ public abstract class AbstractFragment {
     private String action;
     private String bo;
     private String role;
+    private String group;
     private String addition;
     private int fragmentType;
     private HashMap<String, ModifierRecord> modList;
 
-    AbstractFragment(String action, String bo, String role, String addition) {
+    AbstractFragment(String action, String bo, String role, String group, String addition) {
         this.action = action;
         this.bo = bo;
         this.role = role;
+        this.group = group;
         this.addition = addition;
         modList = new HashMap<>();
         fragmentType = -1;
     }
 
-    AbstractFragment(String action, String bo, String role, String addition, HashMap<String, ModifierRecord> modList) {
+    AbstractFragment(String action, String bo, String role, String group, String addition, HashMap<String, ModifierRecord> modList) {
         this.action = action;
         this.bo = bo;
         this.role = role;
+        this.group = group;
         this.addition = addition;
         this.modList = modList;
         fragmentType = -1;
@@ -128,6 +131,14 @@ public abstract class AbstractFragment {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getGroup() {
+        return group;
+    }
+
+    public void setGroup(String group) {
+        this.group = group;
     }
 
     public String getAddition() {
