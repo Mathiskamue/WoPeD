@@ -17,13 +17,13 @@ public class ConditionFragment extends AbstractFragment {
     private final ArrayList<ConditionFragment> sentenceList = new ArrayList<>();
     public boolean sen_headPosition = true;
 
-    public ConditionFragment(String action, String bo, String role, String group, String addition, int type) {
-        super(action, bo, role, group, addition);
+    public ConditionFragment(String action, String bo, String role, String addition, int type) {
+        super(action, bo, role, addition);
         this.type = type;
     }
 
-    public ConditionFragment(String action, String bo, String role, String group, String addition, int type, HashMap<String, ModifierRecord> modList) {
-        super(action, bo, role, addition, group, modList);
+    public ConditionFragment(String action, String bo, String role, String addition, int type, HashMap<String, ModifierRecord> modList) {
+        super(action, bo, role, addition, modList);
         this.type = type;
     }
 

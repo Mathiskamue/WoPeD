@@ -42,7 +42,7 @@ class TextToIntermediateConverter {
     // The following optional parallel paths are available.
     ConverterRecord convertORSimple(RPSTNode<ControlFlow, Node> node) {
         // Create sentence "The following optional paths are available."
-        ExecutableFragment eFrag = new ExecutableFragment("execute", "paths", "", "", "");
+        ExecutableFragment eFrag = new ExecutableFragment("execute", "paths", "", "");
         ModifierRecord modRecord2 = new ModifierRecord(ModifierRecord.TYPE_ADJ, ModifierRecord.TARGET_BO);
         modRecord2.addAttribute("adv-type", "sentential");
         eFrag.addMod("one or more of the", modRecord2);
@@ -78,10 +78,9 @@ class TextToIntermediateConverter {
                                 String action = anno.getActions().get(0);
                                 String bo = anno.getBusinessObjects().get(0);
                                 role = a.getLane().getName();
-                                String group = a.getPool().getName();
 
                                 String addition = anno.getAddition();
-                                eFragYes = new ExecutableFragment(action, bo, role, group, addition);
+                                eFragYes = new ExecutableFragment(action, bo, role, addition);
                                 eFragYes.addAssociation(Integer.valueOf(node.getExit().getId()));
                             }
                             if (arc.getLabel().toLowerCase().equals("no")) {
@@ -91,10 +90,9 @@ class TextToIntermediateConverter {
                                 String bo = anno.getBusinessObjects().get(0);
 
                                 role = a.getLane().getName();
-                                String group = a.getPool().getName();
 
                                 String addition = anno.getAddition();
-                                eFragNo = new ExecutableFragment(action, bo, role, group, addition);
+                                eFragNo = new ExecutableFragment(action, bo, role, addition);
 
                                 ModifierRecord modRecord = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
                                 modRecord.addAttribute("adv-type", "sentential");
@@ -108,7 +106,7 @@ class TextToIntermediateConverter {
             }
         }
 
-        ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_IF, gwExtractor.getModList());
+        ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_IF, gwExtractor.getModList());
         cFrag.bo_replaceWithPronoun = true;
         cFrag.addAssociation(Integer.valueOf(node.getEntry().getId()));
 
@@ -130,7 +128,7 @@ class TextToIntermediateConverter {
 
     ConverterRecord convertXORGeneral(RPSTNode<ControlFlow, Node> node) {
         // One of the following branches is executed.  (And then use bullet points for structuring)
-        ExecutableFragment eFrag = new ExecutableFragment("execute", "one of the following branches", "", "", "");
+        ExecutableFragment eFrag = new ExecutableFragment("execute", "one of the following branches", "", "");
         eFrag.bo_isSubject = true;
         eFrag.verb_IsPassive = true;
         eFrag.bo_hasArticle = false;
@@ -140,7 +138,7 @@ class TextToIntermediateConverter {
         preStatements.add(new DSynTMainSentence(eFrag));
 
         // Statement about negative case (process is finished)
-        ConditionFragment post = new ConditionFragment("execute", "one of the alternative branches", "", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+        ConditionFragment post = new ConditionFragment("execute", "one of the alternative branches", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
         post.verb_isPast = true;
         post.verb_IsPassive = true;
         post.bo_isSubject = true;
@@ -171,13 +169,13 @@ class TextToIntermediateConverter {
 //			String  role = process.getGateways().get(Integer.valueOf(node.getEntry().getId())).getLane().getName();
             String role = getRole(node);
 
-            ExecutableFragment eFrag = new ExecutableFragment("repeat", "step", role, "TESTGRUPPE TextToIntermediateConverter Zeile 174", "");
+            ExecutableFragment eFrag = new ExecutableFragment("repeat", "step", role, "");
             eFrag.addAssociation(Integer.valueOf(node.getEntry().getId()));
             ModifierRecord modRecord = new ModifierRecord(ModifierRecord.TYPE_ADJ, ModifierRecord.TARGET_BO);
             eFrag.addMod("latter", modRecord);
             eFrag.bo_isPlural = true;
 
-            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "", "", "", "");
+            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "", "", "");
             eFrag2.addAssociation(Integer.valueOf(node.getEntry().getId()));
             eFrag.addSentence(eFrag2);
             if (role.equals("")) {
@@ -190,7 +188,7 @@ class TextToIntermediateConverter {
             }
 
             org.woped.p2t.dataModel.process.Activity a = process.getActivity(Integer.valueOf(firstActivity.getExit().getId()));
-            ExecutableFragment eFrag3 = new ExecutableFragment(a.getAnnotations().get(0).getActions().get(0), a.getAnnotations().get(0).getBusinessObjects().get(0), "", "", "");
+            ExecutableFragment eFrag3 = new ExecutableFragment(a.getAnnotations().get(0).getActions().get(0), a.getAnnotations().get(0).getBusinessObjects().get(0), "", "");
             eFrag3.addAssociation(a.getId());
             eFrag3.sen_isCoord = false;
             eFrag3.verb_isParticiple = true;
@@ -199,7 +197,7 @@ class TextToIntermediateConverter {
             eFrag3.addMod("with", modRecord2);
             eFrag2.addSentence(eFrag3);
 
-            ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_AS_LONG_AS, new HashMap<>(gwExtractor.getModList()));
+            ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_AS_LONG_AS, new HashMap<>(gwExtractor.getModList()));
             cFrag.verb_IsPassive = true;
             cFrag.bo_isSubject = true;
             cFrag.sen_headPosition = true;
@@ -207,7 +205,7 @@ class TextToIntermediateConverter {
 
             // Determine postcondition
             gwExtractor.negateGatewayLabel();
-            ConditionFragment post = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_ONCE, gwExtractor.getModList());
+            ConditionFragment post = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_ONCE, gwExtractor.getModList());
             post.verb_IsPassive = true;
             post.bo_isSubject = true;
             post.setFragmentType(AbstractFragment.TYPE_JOIN);
@@ -226,13 +224,13 @@ class TextToIntermediateConverter {
         }
         // Unlabeled case
         else {
-            ExecutableFragment eFrag = new ExecutableFragment("repeat", "step", "", "", "");
+            ExecutableFragment eFrag = new ExecutableFragment("repeat", "step", "", "");
             ModifierRecord modRecord = new ModifierRecord(ModifierRecord.TYPE_ADJ, ModifierRecord.TARGET_BO);
             eFrag.addMod("latter", modRecord);
             eFrag.bo_isPlural = true;
             eFrag.bo_isSubject = true;
             eFrag.verb_IsPassive = true;
-            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "", "", "", "");
+            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "", "", "");
             eFrag.addSentence(eFrag2);
 
             org.woped.p2t.dataModel.process.Activity a = process.getActivity(Integer.valueOf(firstActivity.getExit().getId()));
@@ -251,7 +249,7 @@ class TextToIntermediateConverter {
             }
 
             eFrag2.setRole(role);
-            ExecutableFragment eFrag3 = new ExecutableFragment(a.getAnnotations().get(0).getActions().get(0), a.getAnnotations().get(0).getBusinessObjects().get(0), "", "", a.getAnnotations().get(0).getAddition());
+            ExecutableFragment eFrag3 = new ExecutableFragment(a.getAnnotations().get(0).getActions().get(0), a.getAnnotations().get(0).getBusinessObjects().get(0), "", a.getAnnotations().get(0).getAddition());
             eFrag3.sen_isCoord = false;
             eFrag3.verb_isParticiple = true;
             ModifierRecord modRecord2 = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
@@ -259,14 +257,14 @@ class TextToIntermediateConverter {
             eFrag3.addMod("with", modRecord2);
             eFrag2.addSentence(eFrag3);
 
-            ConditionFragment cFrag = new ConditionFragment("be", "dummy", "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+            ConditionFragment cFrag = new ConditionFragment("be", "dummy", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
             cFrag.addMod("required", new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB));
             cFrag.bo_replaceWithPronoun = true;
             cFrag.bo_isSubject = true;
             cFrag.sen_headPosition = true;
 
             // Determine postcondition
-            ConditionFragment post = new ConditionFragment("finish", "loop", "","", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+            ConditionFragment post = new ConditionFragment("finish", "loop", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
             post.verb_IsPassive = true;
             post.bo_isSubject = true;
             post.setFragmentType(AbstractFragment.TYPE_JOIN);
@@ -284,13 +282,12 @@ class TextToIntermediateConverter {
         }
     }
 
-
     //*********************************************************************************************
     //										SKIP - SPLIT
     //*********************************************************************************************
 
     ConverterRecord convertSkipGeneralUnlabeled(RPSTNode<ControlFlow, Node> node) {
-        ConditionFragment pre = new ConditionFragment("be", "dummy", "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+        ConditionFragment pre = new ConditionFragment("be", "dummy", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
         ModifierRecord mod = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
         pre.addMod("necessary", mod);
         pre.bo_replaceWithPronoun = true;
@@ -309,7 +306,7 @@ class TextToIntermediateConverter {
         GatewayExtractor gwExtractor = new GatewayExtractor(node.getEntry(), lHelper);
 
         // Generate general statement about upcoming decision
-        ConditionFragment pre = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_IN_CASE, gwExtractor.getModList());
+        ConditionFragment pre = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_IN_CASE, gwExtractor.getModList());
         pre.verb_IsPassive = gwExtractor.hasVerb;
         pre.bo_isSubject = true;
         pre.sen_headPosition = true;
@@ -328,8 +325,8 @@ class TextToIntermediateConverter {
         String role = getRole(node);
 
         // Generate general statement about upcoming decision
-        ExecutableFragment eFrag = new ExecutableFragment("decide", "", role, " TESTGRUPPE TextToIntermediateConverter Zeile 331", "");
-        ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_WHETHER, gwExtractor.getModList());
+        ExecutableFragment eFrag = new ExecutableFragment("decide", "", role, "");
+        ConditionFragment cFrag = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_WHETHER, gwExtractor.getModList());
         cFrag.verb_IsPassive = true;
         cFrag.bo_isSubject = true;
         cFrag.sen_headPosition = false;
@@ -348,14 +345,14 @@ class TextToIntermediateConverter {
         }
 
         // Statement about negative case (process is finished)
-        ExecutableFragment eFrag2 = new ExecutableFragment("finish", "process instance", "", "", "");
+        ExecutableFragment eFrag2 = new ExecutableFragment("finish", "process instance", "", "");
         eFrag2.verb_IsPassive = true;
         eFrag2.bo_isSubject = true;
-        ConditionFragment cFrag2 = new ConditionFragment("be", "case", "this", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+        ConditionFragment cFrag2 = new ConditionFragment("be", "case", "this", "", ConditionFragment.TYPE_IF, new HashMap<>());
         cFrag2.verb_isNegated = true;
 
         // Determine precondition
-        ConditionFragment pre = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+        ConditionFragment pre = new ConditionFragment(gwExtractor.getVerb(), gwExtractor.getObject(), "", "", ConditionFragment.TYPE_IF, new HashMap<>());
         pre.verb_IsPassive = true;
         pre.sen_headPosition = true;
         pre.bo_isSubject = true;
@@ -383,7 +380,7 @@ class TextToIntermediateConverter {
 
     ConverterRecord convertANDGeneral(RPSTNode<ControlFlow, Node> node, int activities) {
         // The process is split into three parallel branches.  (And then use bullet points for structuring)
-        ExecutableFragment eFrag = new ExecutableFragment("split", "process", "", "", "into " + activities + " parallel branches");
+        ExecutableFragment eFrag = new ExecutableFragment("split", "process", "", "into " + activities + " parallel branches");
         eFrag.bo_isSubject = true;
         eFrag.verb_IsPassive = true;
         eFrag.add_hasArticle = false;
@@ -393,7 +390,7 @@ class TextToIntermediateConverter {
         preStatements.add(new DSynTMainSentence(eFrag));
 
         // Statement about negative case (process is finished)
-        ConditionFragment post = new ConditionFragment("execute", "all " + activities + " branch", "", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+        ConditionFragment post = new ConditionFragment("execute", "all " + activities + " branch", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
         post.verb_isPast = true;
         post.verb_IsPassive = true;
         post.bo_isSubject = true;
@@ -438,13 +435,13 @@ class TextToIntermediateConverter {
                 org.woped.p2t.dataModel.process.Activity a = process.getActivity(Integer.valueOf(conditionNodes.get(0).getId()));
                 String verb = a.getAnnotations().get(0).getActions().get(0);
                 role = getRole(node);
-                post = new ConditionFragment("finish", lHelper.getNoun(verb), role, "TESTGRUPPE TextToIntermediateConverter Zeile 441", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+                post = new ConditionFragment("finish", lHelper.getNoun(verb), role, "", ConditionFragment.TYPE_ONCE, new HashMap<>());
                 post.sen_headPosition = true;
                 post.verb_isPast = true;
                 post.setFragmentType(AbstractFragment.TYPE_JOIN);
                 post.addAssociation(Integer.valueOf(node.getEntry().getId()));
             } else {
-                post = new ConditionFragment("finish", "both branch", "", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+                post = new ConditionFragment("finish", "both branch", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
                 post.bo_isPlural = true;
                 post.sen_headPosition = true;
                 post.bo_hasArticle = false;
@@ -480,10 +477,10 @@ class TextToIntermediateConverter {
                 String error = event.getLabel();
 
                 if (error.equals("")) {
-                    cFrag = new ConditionFragment("occur", "error", "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+                    cFrag = new ConditionFragment("occur", "error", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
                     cFrag.bo_hasIndefArticle = true;
                 } else {
-                    cFrag = new ConditionFragment("occur", "error '" + error + "'", "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+                    cFrag = new ConditionFragment("occur", "error '" + error + "'", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
                     cFrag.bo_hasArticle = true;
                 }
                 cFrag.bo_isSubject = true;
@@ -496,9 +493,9 @@ class TextToIntermediateConverter {
             case org.woped.p2t.dataModel.process.EventType.INTM_TIMER:
                 String limit = event.getLabel();
                 if (limit.equals("")) {
-                    cFrag = new ConditionFragment("reach", "the time limit", "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+                    cFrag = new ConditionFragment("reach", "the time limit", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
                 } else {
-                    cFrag = new ConditionFragment("reach", "the time limit of " + limit, "", "", "", ConditionFragment.TYPE_IF, new HashMap<>());
+                    cFrag = new ConditionFragment("reach", "the time limit of " + limit, "", "", ConditionFragment.TYPE_IF, new HashMap<>());
                 }
 
                 if (event.isAttached()) {
@@ -509,13 +506,13 @@ class TextToIntermediateConverter {
 
             // MESSAGE EVENT (CATCHING)
             case org.woped.p2t.dataModel.process.EventType.INTM_MSG_CAT:
-                cFrag = new ConditionFragment("receive", "a message", "", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
+                cFrag = new ConditionFragment("receive", "a message", "", "", ConditionFragment.TYPE_ONCE, new HashMap<>());
                 configureFragment(cFrag);
                 break;
 
             // ESCALATION EVENT (CATCHING)
             case org.woped.p2t.dataModel.process.EventType.INTM_ESCALATION_CAT:
-                cFrag = new ConditionFragment("", "of an escalation", "", "", "", ConditionFragment.TYPE_IN_CASE, new HashMap<>());
+                cFrag = new ConditionFragment("", "of an escalation", "", "", ConditionFragment.TYPE_IN_CASE, new HashMap<>());
                 cFrag.bo_hasArticle = false;
                 cFrag.bo_isSubject = true;
                 break;
@@ -526,7 +523,7 @@ class TextToIntermediateConverter {
 
             // END EVENT
             case org.woped.p2t.dataModel.process.EventType.END_EVENT:
-                eFrag = new ExecutableFragment("finish", "process", "", "", "");
+                eFrag = new ExecutableFragment("finish", "process", "", "");
                 eFrag.verb_IsPassive = true;
                 eFrag.bo_isSubject = true;
                 eFrag.bo_hasArticle = true;
@@ -534,14 +531,14 @@ class TextToIntermediateConverter {
 
             // ERROR EVENT
             case org.woped.p2t.dataModel.process.EventType.END_ERROR:
-                eFrag = new ExecutableFragment("end", "process", "", "", "with an error");
+                eFrag = new ExecutableFragment("end", "process", "", "with an error");
                 eFrag.bo_isSubject = true;
                 eFrag.bo_hasArticle = true;
                 eFrag.add_hasArticle = false;
                 return getEventSentence(eFrag);
 
             case org.woped.p2t.dataModel.process.EventType.END_SIGNAL:
-                eFrag = new ExecutableFragment("end", "process", "", "", "with a signal.");
+                eFrag = new ExecutableFragment("end", "process", "", "with a signal.");
                 eFrag.bo_isSubject = true;
                 eFrag.bo_hasArticle = true;
                 eFrag.add_hasArticle = false;
@@ -549,12 +546,12 @@ class TextToIntermediateConverter {
 
             // START EVENT
             case org.woped.p2t.dataModel.process.EventType.START_MSG:
-                cFrag = new ConditionFragment("receive", "message", "", "", "", ConditionFragment.TYPE_ONCE);
+                cFrag = new ConditionFragment("receive", "message", "", "", ConditionFragment.TYPE_ONCE);
                 cFrag.bo_isSubject = true;
                 cFrag.verb_IsPassive = true;
                 cFrag.bo_hasArticle = true;
                 cFrag.bo_hasIndefArticle = true;
-                eFrag = new ExecutableFragment("start", "process", "", "", "");
+                eFrag = new ExecutableFragment("start", "process", "", "");
                 eFrag.bo_isSubject = true;
                 eFrag.bo_hasArticle = true;
                 return getEventSentence(eFrag, cFrag);
@@ -565,32 +562,32 @@ class TextToIntermediateConverter {
 
             // MESSAGE EVENT
             case org.woped.p2t.dataModel.process.EventType.INTM_MSG_THR:
-                eFrag = new ExecutableFragment("send", "message", event.getLane().getName(), event.getPool().getName(), "");
+                eFrag = new ExecutableFragment("send", "message", event.getLane().getName(), "");
                 eFrag.bo_hasIndefArticle = true;
                 return getEventSentence(eFrag);
 
             // ESCALATION EVENT
             case org.woped.p2t.dataModel.process.EventType.INTM_ESCALATION_THR:
-                eFrag = new ExecutableFragment("trigger", "escalation", event.getLane().getName(), event.getPool().getName(), "");
+                eFrag = new ExecutableFragment("trigger", "escalation", event.getLane().getName(), "");
                 eFrag.bo_hasIndefArticle = true;
                 return getEventSentence(eFrag);
 
             // LINK EVENT
             case org.woped.p2t.dataModel.process.EventType.INTM_LINK_THR:
-                eFrag = new ExecutableFragment("send", "signal", event.getLane().getName(), event.getPool().getName(), "");
+                eFrag = new ExecutableFragment("send", "signal", event.getLane().getName(), "");
                 eFrag.bo_hasIndefArticle = true;
                 return getEventSentence(eFrag);
 
             // MULTIPLE TRIGGER
             case org.woped.p2t.dataModel.process.EventType.INTM_MULTIPLE_THR:
-                eFrag = new ExecutableFragment("cause", "multiple trigger", event.getLane().getName(), event.getPool().getName(), "");
+                eFrag = new ExecutableFragment("cause", "multiple trigger", event.getLane().getName(), "");
                 eFrag.bo_hasArticle = false;
                 eFrag.bo_isPlural = true;
                 return getEventSentence(eFrag);
 
             // SIGNAL EVENT
             case org.woped.p2t.dataModel.process.EventType.INTM_SIGNAL_THR:
-                eFrag = new ExecutableFragment("send", "signal", event.getLane().getName(), event.getPool().getName(), "");
+                eFrag = new ExecutableFragment("send", "signal", event.getLane().getName(), "");
                 eFrag.bo_hasArticle = true;
                 eFrag.bo_hasIndefArticle = true;
                 eFrag.bo_isPlural = true;
@@ -622,14 +619,14 @@ class TextToIntermediateConverter {
      * Returns Sentence for attached Event.
      */
     private DSynTConditionSentence getAttachedEventSentence(org.woped.p2t.dataModel.process.Event event, ConditionFragment cFrag) {
-        ExecutableFragment eFrag = new ExecutableFragment("cancel", "it", "", "", "");
+        ExecutableFragment eFrag = new ExecutableFragment("cancel", "it", "", "");
         eFrag.verb_IsPassive = true;
         eFrag.bo_isSubject = true;
         eFrag.bo_hasArticle = false;
 
         if (!event.isLeadsToEnd()) {
             ModifierRecord modRecord = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
-            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "process", "", "", "");
+            ExecutableFragment eFrag2 = new ExecutableFragment("continue", "process", "", "");
             modRecord.addAttribute("adv-type", "sent-final");
             modRecord.addAttribute("rheme", "+");
             eFrag2.addMod("as follows", modRecord);
@@ -637,7 +634,7 @@ class TextToIntermediateConverter {
             eFrag2.bo_isSubject = true;
             eFrag.addSentence(eFrag2);
         } else {
-            ExecutableFragment eFrag2 = new ExecutableFragment("finish", "process", "", "", "");
+            ExecutableFragment eFrag2 = new ExecutableFragment("finish", "process", "", "");
             eFrag2.bo_isSubject = true;
             eFrag2.verb_IsPassive = true;
             eFrag.addSentence(eFrag2);
@@ -655,13 +652,13 @@ class TextToIntermediateConverter {
         switch (event.getType()) {
             case org.woped.p2t.dataModel.process.EventType.INTM_TIMER:
                 modRecord = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
-                eFrag = new ExecutableFragment("continue", "process", "", "", "");
+                eFrag = new ExecutableFragment("continue", "process", "", "");
                 eFrag.bo_isSubject = true;
                 modRecord.addAttribute("adv-type", "sent-final");
                 modRecord.addAttribute("rheme", "+");
                 eFrag.addMod("normally", modRecord);
 
-                cFrag = new ConditionFragment("complete", "the task", "", "", "within the time limit", ConditionFragment.TYPE_IF, new HashMap<>());
+                cFrag = new ConditionFragment("complete", "the task", "", "within the time limit", ConditionFragment.TYPE_IF, new HashMap<>());
                 cFrag.sen_hasConnective = true;
                 cFrag.add_hasArticle = false;
                 modRecord2 = new ModifierRecord(ModifierRecord.TYPE_PREP, ModifierRecord.TARGET_VERB);
@@ -671,13 +668,13 @@ class TextToIntermediateConverter {
                 return new DSynTConditionSentence(eFrag, cFrag);
             case org.woped.p2t.dataModel.process.EventType.INTM_ERROR:
                 modRecord = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
-                eFrag = new ExecutableFragment("continue", "process", "", "", "");
+                eFrag = new ExecutableFragment("continue", "process", "", "");
                 eFrag.bo_isSubject = true;
                 modRecord.addAttribute("adv-type", "sent-final");
                 modRecord.addAttribute("rheme", "+");
                 eFrag.addMod("normally", modRecord);
 
-                cFrag = new ConditionFragment("complete", "the task", "", "", "without error", ConditionFragment.TYPE_IF, new HashMap<>());
+                cFrag = new ConditionFragment("complete", "the task", "", "without error", ConditionFragment.TYPE_IF, new HashMap<>());
                 cFrag.sen_hasConnective = true;
                 cFrag.add_hasArticle = false;
                 modRecord2 = new ModifierRecord(ModifierRecord.TYPE_PREP, ModifierRecord.TARGET_VERB);
@@ -687,13 +684,13 @@ class TextToIntermediateConverter {
                 return new DSynTConditionSentence(eFrag, cFrag);
             case org.woped.p2t.dataModel.process.EventType.INTM_ESCALATION_CAT:
                 modRecord = new ModifierRecord(ModifierRecord.TYPE_ADV, ModifierRecord.TARGET_VERB);
-                eFrag = new ExecutableFragment("continue", "process", "", "", "");
+                eFrag = new ExecutableFragment("continue", "process", "", "");
                 eFrag.bo_isSubject = true;
                 modRecord.addAttribute("adv-type", "sent-final");
                 modRecord.addAttribute("rheme", "+");
                 eFrag.addMod("normally", modRecord);
 
-                cFrag = new ConditionFragment("complete", "the task", "", "", "without escalation", ConditionFragment.TYPE_IF, new HashMap<>());
+                cFrag = new ConditionFragment("complete", "the task", "", "without escalation", ConditionFragment.TYPE_IF, new HashMap<>());
                 cFrag.sen_hasConnective = true;
                 cFrag.add_hasArticle = false;
                 modRecord2 = new ModifierRecord(ModifierRecord.TYPE_PREP, ModifierRecord.TARGET_VERB);
@@ -729,7 +726,7 @@ class TextToIntermediateConverter {
      * Returns sentence for intermediate events.
      */
     private DSynTConditionSentence getIntermediateEventSentence(ConditionFragment cFrag) {
-        ExecutableFragment eFrag = new ExecutableFragment("continue", "process", "", "", "");
+        ExecutableFragment eFrag = new ExecutableFragment("continue", "process", "", "");
         eFrag.bo_isSubject = true;
         return new DSynTConditionSentence(eFrag, cFrag);
     }

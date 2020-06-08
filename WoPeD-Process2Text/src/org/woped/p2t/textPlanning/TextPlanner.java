@@ -141,7 +141,7 @@ public class TextPlanner {
                 if (convRecord != null && convRecord.pre != null) {
                     if (passedFragments.size() > 0) {
                         if (passedFragments.get(0).getFragmentType() == AbstractFragment.TYPE_JOIN) {
-                            ExecutableFragment eFrag = new ExecutableFragment("continue", "process", "", "", "");
+                            ExecutableFragment eFrag = new ExecutableFragment("continue", "process", "", "");
                             eFrag.bo_isSubject = true;
                             DSynTConditionSentence dsyntSentence = new DSynTConditionSentence(eFrag, passedFragments.get(0));
                             sentencePlan.add(dsyntSentence);
@@ -223,7 +223,7 @@ public class TextPlanner {
                         // Event is followed by gateway --> full sentence
                         if (event.getType() == org.woped.p2t.dataModel.process.EventType.START_EVENT && currentPosition < orderedTopNodes.size() - 1 && PlanningHelper.isBond(orderedTopNodes.get(currentPosition + 1))) {
                             start = false;
-                            ExecutableFragment eFrag = new ExecutableFragment("start", "process", "", "", "with a decision");
+                            ExecutableFragment eFrag = new ExecutableFragment("start", "process", "", "with a decision");
                             eFrag.add_hasArticle = false;
                             eFrag.bo_isSubject = true;
                             sentencePlan.add(new DSynTMainSentence(eFrag));
@@ -296,7 +296,7 @@ public class TextPlanner {
             modRecord.addAttribute("starting_point", "+");
 
             String bo = anno.getBusinessObjects().get(0);
-            eFrag = new ExecutableFragment(anno.getActions().get(0), bo, "", "", anno.getAddition());
+            eFrag = new ExecutableFragment(anno.getActions().get(0), bo, "", anno.getAddition());
             eFrag.addAssociation(activity.getId());
             eFrag.addMod("the process begins when", modRecord);
 
@@ -305,10 +305,10 @@ public class TextPlanner {
             if (anno.getActions().size() == 2) {
                 ExecutableFragment eFrag2;
                 if (anno.getBusinessObjects().size() == 2) {
-                    eFrag2 = new ExecutableFragment(anno.getActions().get(1), anno.getBusinessObjects().get(1), "", "", "");
+                    eFrag2 = new ExecutableFragment(anno.getActions().get(1), anno.getBusinessObjects().get(1), "", "");
                     eFrag2.addAssociation(activity.getId());
                 } else {
-                    eFrag2 = new ExecutableFragment(anno.getActions().get(1), "", "", "", "");
+                    eFrag2 = new ExecutableFragment(anno.getActions().get(1), "", "", "");
                     eFrag2.addAssociation(activity.getId());
                 }
                 correctArticleSettings(eFrag2);
@@ -335,7 +335,7 @@ public class TextPlanner {
         }
 
         // Standard case
-        eFrag = new ExecutableFragment(anno.getActions().get(0), anno.getBusinessObjects().get(0), "", "", anno.getAddition());
+        eFrag = new ExecutableFragment(anno.getActions().get(0), anno.getBusinessObjects().get(0), "", anno.getAddition());
         eFrag.addAssociation(activity.getId());
         if (activity.getType() == ActivityType.TYPE_MAP.get("Subprocess")) {
             eFrag.setAddition("in a subprocess");
@@ -345,7 +345,7 @@ public class TextPlanner {
         if (anno.getActions().size() == 2) {
             ExecutableFragment eFrag2;
             if (anno.getBusinessObjects().size() == 2) {
-                eFrag2 = new ExecutableFragment(anno.getActions().get(1), anno.getBusinessObjects().get(1), "", "", "");
+                eFrag2 = new ExecutableFragment(anno.getActions().get(1), anno.getBusinessObjects().get(1), "", "");
                 if (eFrag.verb_IsPassive) {
                     if (anno.getBusinessObjects().get(0).equals("")) {
                         eFrag2.verb_IsPassive = true;
@@ -359,7 +359,7 @@ public class TextPlanner {
 
                 }
             } else {
-                eFrag2 = new ExecutableFragment(anno.getActions().get(1), "", "", "", "");
+                eFrag2 = new ExecutableFragment(anno.getActions().get(1), "", "", "");
                 if (eFrag.verb_IsPassive) {
                     eFrag2.verb_IsPassive = true;
                 }

@@ -11,17 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0fe078b1-bc4e-4c3c-990f-f7f38dbe9262" name="Default" comment="Updated Woflan Link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/out/p2t.war" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/out/p2t.war" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/AbstractFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/AbstractFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/ConditionFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/ConditionFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/ExecutableFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/intermediate/ExecutableFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/pnmlReader/PetriNetToProcessConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/pnmlReader/PetriNetToProcessConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/process/Lane.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/dataModel/process/Lane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textPlanning/TextPlanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textPlanning/TextPlanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textPlanning/TextToIntermediateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textPlanning/TextToIntermediateConverter.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,16 +106,6 @@
       <recent name="$PROJECT_DIR$/WoPeD-Text2Process/test/Test" />
     </key>
   </component>
-<<<<<<< Updated upstream
-=======
-  <component name="RunDashboard">
-    <option name="excludedTypes">
-      <set>
-        <option value="TomeeConfiguration" />
-      </set>
-    </option>
-  </component>
->>>>>>> Stashed changes
   <component name="RunManager" selected="Application.RunWoPeD">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -445,11 +425,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.RunWoPeD" />
-<<<<<<< Updated upstream
-=======
-        <item itemvalue="Application.Test" />
-        <item itemvalue="JUnit.test in WoPeD-Process2Text" />
->>>>>>> Stashed changes
         <item itemvalue="JUnit.All in WoPeD-Process2Text" />
         <item itemvalue="JUnit.All in WoPeD-Text2Process" />
         <item itemvalue="JUnit.STTextToProcess" />
@@ -581,7 +556,6 @@
       <workItem from="1588770764612" duration="1348000" />
       <workItem from="1588849160984" duration="61000" />
       <workItem from="1588851110689" duration="798000" />
-<<<<<<< Updated upstream
       <workItem from="1588877193469" duration="590000" />
       <workItem from="1588947573458" duration="1000" />
       <workItem from="1588947602726" duration="792000" />
@@ -590,33 +564,6 @@
       <workItem from="1589367254637" duration="8330000" />
       <workItem from="1589551427677" duration="423000" />
       <workItem from="1589784956117" duration="5394000" />
-=======
-      <workItem from="1589037251492" duration="2091000" />
-      <workItem from="1589126975733" duration="1413000" />
-      <workItem from="1589177736921" duration="7464000" />
-      <workItem from="1589190999806" duration="1011000" />
-      <workItem from="1589192016172" duration="2000" />
-      <workItem from="1589192052684" duration="745000" />
-      <workItem from="1589192827880" duration="1104000" />
-      <workItem from="1589612714835" duration="2864000" />
-      <workItem from="1589615636127" duration="513000" />
-      <workItem from="1589618969277" duration="385000" />
-      <workItem from="1589794230406" duration="2081000" />
-      <workItem from="1589982652832" duration="5304000" />
-      <workItem from="1589988318430" duration="167000" />
-      <workItem from="1589988503801" duration="7921000" />
-      <workItem from="1590042009751" duration="265000" />
-      <workItem from="1590043060215" duration="1835000" />
-      <workItem from="1590049051504" duration="1443000" />
-      <workItem from="1590050686548" duration="1580000" />
-      <workItem from="1590052685328" duration="3000" />
-      <workItem from="1590052705498" duration="6008000" />
-      <workItem from="1590062101669" duration="1185000" />
-      <workItem from="1590137287304" duration="1111000" />
-      <workItem from="1590386555946" duration="808000" />
-      <workItem from="1590579452886" duration="3960000" />
-      <workItem from="1590583470380" duration="1469000" />
->>>>>>> Stashed changes
     </task>
     <task id="LOCAL-00001" summary="Adapted master build to IntelliJ">
       <created>1532514709268</created>
@@ -963,46 +910,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Some more tidying up" />
   </component>
   <component name="WindowStateProjectService">
-<<<<<<< Updated upstream
     <state x="533" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1589372843411">
       <screen x="0" y="23" width="1440" height="814" />
-=======
-    <state x="1082" y="550" key="#JBoss_Server" timestamp="1590051405192">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1082" y="550" key="#JBoss_Server/0.23.2560.1361@0.23.2560.1361" timestamp="1590051405192" />
-    <state x="782" y="204" key="#P2T" timestamp="1590051486586">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="782" y="204" key="#P2T/0.23.2560.1361@0.23.2560.1361" timestamp="1590051486586" />
-    <state x="783" y="234" key="#Project_Structure" timestamp="1589794013399">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="783" y="234" key="#Project_Structure/0.23.2560.1361@0.23.2560.1361" timestamp="1589794013399" />
-    <state x="1079" y="537" key="#TomEE_Server" timestamp="1589784729542">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1079" y="537" key="#TomEE_Server/0.23.2560.1361@0.23.2560.1361" timestamp="1589784729542" />
-    <state x="684" y="232" key="#Unnamed" timestamp="1589796072365">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="684" y="232" key="#Unnamed/0.23.2560.1361@0.23.2560.1361" timestamp="1589796072365" />
-    <state x="1023" y="213" key="#Unnamed_(1)" timestamp="1589784875734">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1023" y="213" key="#Unnamed_(1)/0.23.2560.1361@0.23.2560.1361" timestamp="1589784875734" />
-    <state x="1416" y="489" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589782377654">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1416" y="489" key="#com.intellij.fileTypes.FileTypeChooser/0.23.2560.1361@0.23.2560.1361" timestamp="1589782377654" />
-    <state x="567" y="215" key="#com.intellij.ide.util.MemberChooser" timestamp="1590581561589">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state x="567" y="215" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1590581561589" />
-    <state x="1008" y="402" key="#com.intellij.ide.util.MemberChooser/0.23.2560.1361@0.23.2560.1361" timestamp="1589989482890" />
-    <state x="823" y="287" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable" timestamp="1589796053416">
-      <screen x="0" y="23" width="2560" height="1361" />
->>>>>>> Stashed changes
     </state>
     <state x="533" y="136" key="#com.intellij.ide.util.MemberChooser/0.23.1440.814@0.23.1440.814" timestamp="1589372843411" />
     <state x="1677" y="412" key="#com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditorDialog" timestamp="1588768064064">
@@ -1026,7 +935,6 @@
     <state width="1398" height="216" key="GridCell.Tab.0.bottom" timestamp="1589791434980">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-<<<<<<< Updated upstream
     <state width="1578" height="282" key="GridCell.Tab.0.bottom/0.0.1620.1040@0.0.1620.1040" timestamp="1588877674890" />
     <state width="1398" height="207" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1588948724003" />
     <state width="1398" height="208" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1588948397683" />
@@ -1090,113 +998,6 @@
     <state width="1398" height="379" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1589376808604" />
     <state x="216" y="23" width="1024" height="758" key="SettingsEditor" timestamp="1589792890628">
       <screen x="0" y="23" width="1440" height="810" />
-=======
-    <state x="1109" y="514" width="608" height="256" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.23.2560.1361@0.23.2560.1361" timestamp="1590052955460" />
-    <state x="671" y="432" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589038510448">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="671" y="432" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1589038510448" />
-    <state x="2786" y="424" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1590137869300">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2786" y="424" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590137869300" />
-    <state x="1155" y="578" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1590053254283" />
-    <state x="874" y="168" width="1686" height="1215" key="CommitChangelistDialog2" timestamp="1590059339085">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="874" y="168" width="1686" height="1215" key="CommitChangelistDialog2/0.23.2560.1361@0.23.2560.1361" timestamp="1590059339085" />
-    <state width="455" height="466" key="DebuggerActiveHint" timestamp="1590580923309">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="455" height="466" key="DebuggerActiveHint/0.23.1440.810@0.23.1440.810" timestamp="1590580923309" />
-    <state x="1356" y="628" key="DetectedRootsChooserDialog" timestamp="1589982519470">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1356" y="628" key="DetectedRootsChooserDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1589982519470" />
-    <state x="446" y="419" width="2114" height="880" key="DiffContextDialog" timestamp="1590063838743">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="446" y="419" width="2114" height="880" key="DiffContextDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1590063838743" />
-    <state width="1398" height="176" key="GridCell.Tab.0.bottom" timestamp="1590583465073">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="225" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590138179140" />
-    <state width="1877" height="340" key="GridCell.Tab.0.bottom/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386618185" />
-    <state width="1398" height="176" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1590583465073" />
-    <state width="894" height="289" key="GridCell.Tab.0.bottom/0.23.2560.1361@0.23.2560.1361" timestamp="1590065378142" />
-    <state width="1398" height="176" key="GridCell.Tab.0.center" timestamp="1590583465073">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="225" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590138179139" />
-    <state width="1877" height="340" key="GridCell.Tab.0.center/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386618184" />
-    <state width="1398" height="176" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1590583465073" />
-    <state width="894" height="289" key="GridCell.Tab.0.center/0.23.2560.1361@0.23.2560.1361" timestamp="1590065378142" />
-    <state width="1398" height="176" key="GridCell.Tab.0.left" timestamp="1590583465073">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="225" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590138179138" />
-    <state width="1877" height="340" key="GridCell.Tab.0.left/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386618184" />
-    <state width="1398" height="176" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1590583465073" />
-    <state width="894" height="289" key="GridCell.Tab.0.left/0.23.2560.1361@0.23.2560.1361" timestamp="1590065378141" />
-    <state width="1398" height="176" key="GridCell.Tab.0.right" timestamp="1590583465073">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="225" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590138179139" />
-    <state width="1877" height="340" key="GridCell.Tab.0.right/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386618185" />
-    <state width="1398" height="176" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1590583465073" />
-    <state width="894" height="289" key="GridCell.Tab.0.right/0.23.2560.1361@0.23.2560.1361" timestamp="1590065378142" />
-    <state width="1398" height="208" key="GridCell.Tab.1.bottom" timestamp="1590583465070">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="340" key="GridCell.Tab.1.bottom/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386643091" />
-    <state width="1398" height="208" key="GridCell.Tab.1.bottom/0.23.1440.810@0.23.1440.810" timestamp="1590583465070" />
-    <state width="911" height="325" key="GridCell.Tab.1.bottom/0.23.2560.1361@0.23.2560.1361" timestamp="1589797148785" />
-    <state width="1398" height="208" key="GridCell.Tab.1.center" timestamp="1590583465070">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="340" key="GridCell.Tab.1.center/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386643090" />
-    <state width="1398" height="208" key="GridCell.Tab.1.center/0.23.1440.810@0.23.1440.810" timestamp="1590583465070" />
-    <state width="911" height="325" key="GridCell.Tab.1.center/0.23.2560.1361@0.23.2560.1361" timestamp="1589797148784" />
-    <state width="1398" height="208" key="GridCell.Tab.1.left" timestamp="1590583465070">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="340" key="GridCell.Tab.1.left/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386643090" />
-    <state width="1398" height="208" key="GridCell.Tab.1.left/0.23.1440.810@0.23.1440.810" timestamp="1590583465070" />
-    <state width="911" height="325" key="GridCell.Tab.1.left/0.23.2560.1361@0.23.2560.1361" timestamp="1589797148784" />
-    <state width="1398" height="208" key="GridCell.Tab.1.right" timestamp="1590583465070">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state width="1877" height="340" key="GridCell.Tab.1.right/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386643090" />
-    <state width="1398" height="208" key="GridCell.Tab.1.right/0.23.1440.810@0.23.1440.810" timestamp="1590583465070" />
-    <state width="911" height="325" key="GridCell.Tab.1.right/0.23.2560.1361@0.23.2560.1361" timestamp="1589797148785" />
-    <state x="847" y="396" width="1140" height="708" key="IDE.errors.dialog" timestamp="1589191531990">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="847" y="396" width="1140" height="708" key="IDE.errors.dialog/0.23.2560.1361@0.23.2560.1361" timestamp="1589191531990" />
-    <state x="1065" y="523" width="764" height="587" key="NewModule_or_Project.wizard" timestamp="1590053046823">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1065" y="523" width="764" height="587" key="NewModule_or_Project.wizard/0.23.2560.1361@0.23.2560.1361" timestamp="1590053046823" />
-    <state x="2250" y="308" width="1955" height="781" key="SettingsEditor" timestamp="1590137872264">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2250" y="308" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590137872264" />
-    <state x="440" y="426" width="1955" height="781" key="SettingsEditor/0.23.2560.1361@0.23.2560.1361" timestamp="1590059130182" />
-    <state x="1092" y="416" key="Vcs.Push.Dialog.v2" timestamp="1590059351859">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1092" y="416" key="Vcs.Push.Dialog.v2/0.23.2560.1361@0.23.2560.1361" timestamp="1590059351859" />
-    <state x="1257" y="492" width="1214" height="580" key="VcsDiffUtil.ChangesDialog" timestamp="1590058728558">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="1257" y="492" width="1214" height="580" key="VcsDiffUtil.ChangesDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1590058728558" />
-    <state width="1051" height="545" key="XDebugger.FullValuePopup" timestamp="1589614615906">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state width="1051" height="545" key="XDebugger.FullValuePopup/0.23.2560.1361@0.23.2560.1361" timestamp="1589614615906" />
-    <state x="1078" y="521" key="chooseDestDirectoryDialog" timestamp="1589997700011">
-      <screen x="0" y="23" width="2560" height="1361" />
->>>>>>> Stashed changes
     </state>
     <state x="578" y="191" key="SettingsEditor/0.0.1620.1040@0.0.1620.1040" timestamp="1588877783400" />
     <state x="216" y="23" key="SettingsEditor/0.23.1440.806@0.23.1440.806" timestamp="1588948700921" />
@@ -1215,30 +1016,7 @@
     <state x="474" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1588877565250">
       <screen x="0" y="0" width="1620" height="1040" />
     </state>
-<<<<<<< Updated upstream
     <state x="474" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1620.1040@0.0.1620.1040" timestamp="1588877565250" />
-=======
-    <state x="2290" y="270" key="extract.method.dialog/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590386940450" />
-    <state x="935" y="254" width="1312" height="946" key="find.popup" timestamp="1590062329161">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="935" y="254" width="1312" height="946" key="find.popup/0.23.2560.1361@0.23.2560.1361" timestamp="1590062329161" />
-    <state x="828" y="280" key="new project wizard" timestamp="1590052596322">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="828" y="280" key="new project wizard/0.23.2560.1361@0.23.2560.1361" timestamp="1590052596322" />
-    <state x="979" y="472" key="refactoring.ChangeSignatureDialog" timestamp="1589989394341">
-      <screen x="0" y="23" width="2560" height="1361" />
-    </state>
-    <state x="979" y="472" key="refactoring.ChangeSignatureDialog/0.23.2560.1361@0.23.2560.1361" timestamp="1589989394341" />
-    <state x="484" y="242" width="715" height="403" key="search.everywhere.popup" timestamp="1590581758565">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state x="2565" y="281" width="672" height="517" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1590138364779" />
-    <state x="2245" y="281" width="953" height="517" key="search.everywhere.popup/0.0.1600.860/1600.0.1920.1040@1600.0.1920.1040" timestamp="1590385719630" />
-    <state x="484" y="242" width="715" height="403" key="search.everywhere.popup/0.23.1440.810@0.23.1440.810" timestamp="1590581758565" />
-    <state x="860" y="391" width="670" height="676" key="search.everywhere.popup/0.23.2560.1361@0.23.2560.1361" timestamp="1589989225093" />
->>>>>>> Stashed changes
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,15 +1050,9 @@
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/textGenerator/TextGenerator.java</url>
           <line>59</line>
           <option name="timeStamp" value="106" />
-=======
-          <url>file://$PROJECT_DIR$/WoPeD-Process2Text/src/org/woped/p2t/sentencePlanning/ReferringExpressionGenerator.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="131" />
->>>>>>> Stashed changes
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
